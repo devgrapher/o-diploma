@@ -40,6 +40,6 @@ class DiplomasController < ApplicationController
   private
 
   def build_meta_tag
-    set_meta_tags og: { url: '플레이오그라운', description: '경기 결과', image: 'localhost:3000/public/bg.png' }
+    set_meta_tags og: { description: '경기 결과', image: 'diploma.orienteering.co.kr/public/bg.png' }
   end
 end

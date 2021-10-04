@@ -20,6 +20,11 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      backgroundImage: {
+       'main': "url('../images/main.jpg')",
+      }
+    },
     colors: {
       primary: colors.yellow,
       transparent: 'transparent',
