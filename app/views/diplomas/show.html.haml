@@ -2,5 +2,8 @@
   .my-8.border.border-gray-200
     = render @diploma
 
-  .flex
-    = link_to '다운로드', diploma_path(@diploma, format: :png), class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded'
+  .flex.space-x-4
+    = link_to '다운로드', diploma_path(@diploma, download: true, format: :png), class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded'
+    = link_to 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdeepfake-quiz.factchecker.or.kr%2Fresult1.html&amp;src=sdkpreparse', style: 'background-color: #1877f2;', class: 'flex rounded text-white py-1.5 p-2' do
+      = image_pack_tag "media/images/social-facebook.png", class: 'w-6 h-6 mr-1'
+      공유하기
