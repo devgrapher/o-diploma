@@ -3,7 +3,7 @@ require 'csv'
 namespace :data do
   desc 'seed diploma'
   task 'seed:diploma', [:file_name] => :environment do |_, args|
-    csv_text = File.read(Rails.root.join(args[:file_name] || 'sample.csv'))
+    csv_text = File.read(Rails.root.join(args[:file_name] || 'result.csv'))
     csv = CSV.parse(csv_text, headers: true)
 
     csv.each do |row|
