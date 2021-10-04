@@ -1,0 +1,95 @@
+@layer base {
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Thin.woff") format("woff");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Light.woff") format("woff");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-DemiLight.woff") format("woff");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Regular.woff") format("woff");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Medium.woff") format("woff");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Bold.woff") format("woff");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "NotoSans";
+    src: url("../fonts/NotoSans-Black.woff") format("woff");
+    font-weight: 900;
+  }
+
+
+  * {
+    word-break: keep-all;
+    white-space: normal;
+    overflow-wrap: break-word;
+    -webkit-touch-callout: none;
+    @media not all and (min-resolution:.001dpcm) {
+      @supports (-webkit-appearance:none) {
+        word-break: normal;
+      }
+    }
+  }
+
+  body {
+    -webkit-text-size-adjust: none;
+    font-family: 'NotoSans', 'Roboto', 'Droid Sans', 'Malgun Gothic', 'Helvetica', 'Apple-Gothic', '애플고딕', 'Tahoma', dotum, '돋움', gulim, '굴림', sans-serif;
+  }
+
+  body.ie {
+    -webkit-text-size-adjust: none;
+    font-family: 'Roboto','Droid Sans','Malgun Gothic','Helvetica','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림', sans-serif;
+  }
+
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    @apply ring border-blue-200;
+  }
+
+  input::placeholder {
+    @apply text-gray-400;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path d="M15 15h-3v-3h3v3zm-4.5-7.5h-3v3h3v-3zm4.5 0h-3v3h3v-3zM6 12H3v3h3v-3zm4.5 0h-3v3h3v-3zM6 7.5H3v3h3v-3zm12-6V18H0V1.5h2.25v.75c0 .827.673 1.5 1.5 1.5s1.5-.673 1.5-1.5V1.5h7.5v.75c0 .827.673 1.5 1.5 1.5s1.5-.673 1.5-1.5V1.5H18zM16.5 6h-15v10.5h15V6zM15 .75c0-.414-.335-.75-.75-.75s-.75.336-.75.75v1.5c0 .414.335.75.75.75s.75-.336.75-.75V.75zM4.5 2.25c0 .414-.335.75-.75.75S3 2.664 3 2.25V.75c0-.414.335-.75.75-.75s.75.336.75.75v1.5z" transform="translate(-286.000000, -311.000000) translate(199.000000, 305.000000) translate(87.000000, 6.000000) translate(3.000000, 3.000000)"/></svg>');
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .ignore-parent-full-width{
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  @responsive {
+    .deep-fake-quiz {
+      background-image: url(../images/quiz-bg.png);
+      background-size: 12rem;
+    }
+  }
+}

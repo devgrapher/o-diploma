@@ -1,4 +1,4 @@
 @use "~tailwindcss/base";
 @use "~tailwindcss/components";
 @use "~tailwindcss/utilities";
-
+@forward "../stylesheets/application/base.scss";

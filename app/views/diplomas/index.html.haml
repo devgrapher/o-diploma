@@ -1,5 +1,8 @@
-%h1.py-12.text-white
-  Play O Ground 완주를 축하합니다.
-= form_with url: @model, method: :get, local: true do |f|
-  = text_field_tag :q, params[:q], placeholder: '이름을 입력해주세요', type: 'search', class:"w-full h-10 border border-solid rounded pl-8"
+.flex.items-center.justify-center.text-center
+  %div
+    .py-12.text-2xl
+      Play O Ground 완주를 축하합니다.
+    = form_with url: @model, method: :get, local: true do |f|
+      = text_field_tag :q, params[:q], placeholder: '이름을 입력해주세요', type: 'search', class:"w-full h-10 border border-solid rounded pl-8"
+      = f.submit '작성하기', class: 'text-white ml-2 py-2 w-52 h-9 bg-primary-400 rounded-sm cursor-pointer'
 
