@@ -1,0 +1,8 @@
+.max-w-2xl.relative.text-center
+  .w-full.-z-10
+    = image_pack_tag('media/images/bg.png', class: 'w-full h-full object-cover')
+  .absolute.bottom-7.right-24.flex.flex-col.justify-end.items-center.h-96.p-2.text-3xl.text-white
+    .py-4.text-center= @diploma.name
+    .py-4.text-center= @diploma.category
+    .py-4.text-center= @diploma.gameclass
+    .py-4.text-center= @diploma.result

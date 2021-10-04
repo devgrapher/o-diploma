@@ -99,6 +99,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    imgkit (1.6.2)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     listen (3.7.0)
@@ -114,7 +115,6 @@ GEM
     mini_mime (1.1.1)
     minitest (5.14.4)
     msgpack (1.4.2)
-    mysql2 (0.5.3)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
@@ -224,9 +224,9 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   haml-rails (~> 2.0)
+  imgkit
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  mysql2 (~> 0.5.3)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.2)

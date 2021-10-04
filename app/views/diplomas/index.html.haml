@@ -2,5 +2,5 @@
   .py-12.text-2xl
     Play O Ground 완주를 축하합니다.
   = form_with url: diplomas_search_path, method: :get, local: true, class: "space-y-4" do |f|
-    = text_field_tag :name, params[:name], placeholder: '이름을 입력해주세요', type: 'search', class:"w-40 h-10 border border-solid rounded px-4"
+    = text_field_tag :name, params[:name], placeholder: '이름을 입력해주세요', type: 'search', class:"w-44 h-10 border border-solid rounded px-4"
     = f.submit '확인', class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded-sm cursor-pointer'

@@ -5,6 +5,18 @@ class DiplomasController < ApplicationController
 
   def show
     @diploma = Diploma.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render "show" }
+      format.png do
+        dom = render_to_string(template: 'diplomas/_diploma.png', layout: 'layouts/imgkit')
+        p dom
+        kit = IMGKit.new(dom, width: 600, height: 600)
+        send_data(kit.to_img(:png), :type => "image/png", :disposition => 'inline')
+        #file = kit.to_file("#{Rails.root}/public/#{params[:id]}.png")
+        #send_file("#{Rails.root}/public/#{params[:id]}.png", :filename => "screenshot.png", :type => "image/png",:disposition => 'attachment',:streaming=> 'true')
+      end
+    end
   end
 
   def search
