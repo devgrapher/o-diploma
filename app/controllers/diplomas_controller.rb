@@ -2,7 +2,7 @@ class DiplomasController < ApplicationController
   before_action :build_meta_tag, only: [:show]
 
   def index
-    p 'test'
+    @diplomas = Diploma.all
   end
 
   def show
@@ -23,6 +23,9 @@ class DiplomasController < ApplicationController
         end
       end
     end
+  end
+
+  def search_form
   end
 
   def search
