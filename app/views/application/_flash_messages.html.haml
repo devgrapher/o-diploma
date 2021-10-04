@@ -1,0 +1,6 @@
+- if flash.present?
+  - flash_message = flash.first
+  - flash.each do |key, message|
+    .text-center{ data: { controller: 'flash', 'flash-key-value': key, 'flash-message-value': message } }
+      = message
+  - flash.clear

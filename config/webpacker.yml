@@ -10,7 +10,7 @@ default: &default
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
-  additional_paths: [ 'app/javascript/images', 'app/javascript/fonts' ]
+  additional_paths: [ 'app/javascript/images', 'app/javascript/fonts', 'app/views']
 
 
   # Reload manifest.json on all requests so we reload latest compiled packs
@@ -50,7 +50,7 @@ default: &default
 
 development:
   <<: *default
-  compile: false
+  compile: falsa
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:

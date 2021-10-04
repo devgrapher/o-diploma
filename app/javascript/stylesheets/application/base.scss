@@ -63,11 +63,9 @@
   }
 
   input:focus, textarea:focus, select:focus {
-    @apply ring border-blue-200;
   }
 
   input::placeholder {
-    @apply text-gray-400;
   }
 
   ::-webkit-calendar-picker-indicator {

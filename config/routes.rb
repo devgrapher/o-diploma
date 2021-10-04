@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "diplomas#index"
 
-  get 'diplomas/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/diplomas", to: "diplomas#index"
+  get "/diplomas/search", to: "diplomas#search"
+  get "/diplomas/:id", to: "diplomas#show", as: :diploma
+
 end
