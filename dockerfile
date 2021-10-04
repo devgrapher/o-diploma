@@ -1,6 +1,10 @@
 # syntax=docker/dockerfile:1
 FROM ruby:2.7.2
-RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && bash nodesource_setup.sh && apt-get install nodejs
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y nodejs yarn
+
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
@@ -15,7 +19,7 @@ RUN apt-get -f -y install /tmp/wkhtmltopdf.deb
 COPY bin/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
+EXPOSE 80
 
 COPY yarn.lock /app/
 COPY package.json /app/
@@ -31,5 +35,7 @@ COPY config.ru /app/
 
 COPY result.csv /app/
 
+ENV RAILS_ENV production
+
 # Configure the main process to run when running the image
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "bin/rails", "server", "-p", "80", "-b", "0.0.0.0"]
