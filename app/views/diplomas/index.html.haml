@@ -1,0 +1,5 @@
+%h1.py-12.text-white
+  Play O Ground 완주를 축하합니다.
+= form_with url: @model, method: :get, local: true do |f|
+  = text_field_tag :q, params[:q], placeholder: '이름을 입력해주세요', type: 'search', class:"w-full h-10 border border-solid rounded pl-8"
+
