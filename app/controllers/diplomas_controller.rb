@@ -4,6 +4,7 @@ class DiplomasController < ApplicationController
   end
 
   def show
+    @diploma = Diploma.find(params[:id])
   end
 
   def search

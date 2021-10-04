@@ -7,6 +7,7 @@
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbo-track': 'reload'
+    %link{rel: :stylesheet, href: "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"}
   %body
     = render 'application/flash_messages'
     .flex.mt-4.mb-20.max-w-3xl.mx-4.mx-auto{ class: 'md:mt-8' }
