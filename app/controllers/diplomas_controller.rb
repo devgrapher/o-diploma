@@ -26,6 +26,7 @@ class DiplomasController < ApplicationController
   end
 
   def search_form
+    @diplomas = Diploma.all
   end
 
   def search
