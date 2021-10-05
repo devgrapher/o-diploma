@@ -23,6 +23,7 @@ module.exports = {
     extend: {
       backgroundImage: {
        'main': "url('../images/main.jpg')",
+       'diploma': "url('../images/diploma.png')",
       }
     },
     colors: {
