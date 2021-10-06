@@ -30,7 +30,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  config.asset_host = ENV['ESSET_HOST'] || 'https://odiploma.u49j4n59sgdo2.ap-northeast-2.cs.amazonlightsail.com'
+  config.asset_host = ENV['ESSET_HOST'] || 'https://diploma.orienteering.co.kr'
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
 
