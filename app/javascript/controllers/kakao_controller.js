@@ -11,6 +11,7 @@ export default class extends Controller {
   async post(e) {
     e.preventDefault()
 
+    console.log(this.imageValue)
     Kakao.Link.sendScrap({
       requestUrl: this.imageValue
     })
