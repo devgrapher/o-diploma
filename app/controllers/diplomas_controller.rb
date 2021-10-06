@@ -1,6 +1,4 @@
 class DiplomasController < ApplicationController
-  before_action :build_meta_tag, only: [:show]
-
   def index
     @diplomas = Diploma.all
   end
@@ -40,7 +38,7 @@ class DiplomasController < ApplicationController
 
   private
 
-  def build_meta_tag
-    set_meta_tags og: { description: '경기 결과', image: 'diploma.orienteering.co.kr/public/bg.png' }
+  def build_meta_tag(id)
+    set_meta_tags og: { description: '경기 결과', image: diploma_path(format: :png) }
   end
 end
