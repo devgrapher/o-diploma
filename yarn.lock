@@ -890,6 +890,16 @@
   "resolved" "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.2.tgz"
   "version" "1.1.2"
 
+"@hotwired/stimulus-webpack-helpers@^1.0.1":
+  "integrity" "sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz"
+  "version" "1.0.1"
+
+"@hotwired/stimulus@^3.0.0", "@hotwired/stimulus@>= 3.0":
+  "integrity" "sha512-UFIuuf7GjKJoIYromuTmqfzT8gZ8eu5zIB5m2QoEsopymGeN7rfDSTRPyRfwHIqP0x+0vWo4O1LFozw+/sWXxg=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.0.0.tgz"
+  "version" "3.0.0"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"

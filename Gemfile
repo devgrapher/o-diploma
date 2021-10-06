@@ -59,3 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'imgkit'
 gem 'meta-tags'
+gem 'importmap-rails'

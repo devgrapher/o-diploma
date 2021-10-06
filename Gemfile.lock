@@ -100,6 +100,8 @@ GEM
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     imgkit (1.6.2)
+    importmap-rails (0.7.6)
+      rails (>= 6.0.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     listen (3.7.0)
@@ -230,6 +232,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   haml-rails (~> 2.0)
   imgkit
+  importmap-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   meta-tags
