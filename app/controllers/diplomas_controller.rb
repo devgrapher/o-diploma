@@ -1,4 +1,6 @@
 class DiplomasController < ApplicationController
+  caches_action :show, expires_in: 1.hour, unless: -> { request.format.html? }
+
   def index
     @diplomas = Diploma.all
   end
@@ -11,7 +13,6 @@ class DiplomasController < ApplicationController
       format.html { render "show" }
       format.png do
         dom = render_to_string(template: 'diplomas/_diploma.png', layout: 'layouts/imgkit')
-        p dom
         kit = IMGKit.new(dom, width: 600, height: 600)
         if params[:download]
           file_path = "#{Rails.root}/public/#{params[:id]}.png"
