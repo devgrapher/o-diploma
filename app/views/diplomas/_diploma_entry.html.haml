@@ -1,8 +1,9 @@
-.flex.space-x-1.text-sm.md:text-base
-  .w-8= diploma.rank
-  .w-32= diploma.name
-  .w-32= diploma.club
-  .w-12= diploma.gameclass
-  .hidden.md:block.w-20= diploma.start
-  .hidden.md:block.w-20= diploma.finish
-  .w-20= diploma.result
+- bg = diploma_counter % 2 == 0 ? 'bg-opacity-20 bg-gray-50' : '';
+.flex.space-x-1.text-sm.md:text-base{ class: bg }
+  .w-12= diploma_counter == 0 ? '종목' : diploma.gameclass
+  .w-8= diploma_counter == 0 ? '순위' : diploma.rank
+  .w-32= diploma_counter == 0 ? '이름' : diploma.name
+  .w-32= diploma_counter == 0 ? '클럽' : diploma.club
+  .w-20= diploma_counter == 0 ? '기록' : diploma.result
+  .hidden.md:block.w-20= diploma_counter == 0 ? '시작시간' : diploma.start
+  .hidden.md:block.w-20= diploma_counter == 0 ? '종료시간' : diploma.finish

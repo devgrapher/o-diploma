@@ -1,5 +1,5 @@
 .-m-8.pb-20.bg-main.bg-cover.opacity-90.min-h-screen{ style: 'width: 100vw; margin-left: calc(-50vw + 50%);' }
-  .py-16.md:pt-24.text-2xl.text-center.text-white
+  .py-16.md:pt-24.text-2xl.text-center.text-white.font-medium
     Play O Ground
     .py-2
       완주를 축하합니다.
@@ -16,4 +16,4 @@
         .mt-4.text-white.font-bold.border-b.w-full.text-xl
           참가자 기록
         .text-white.font-medium
-          = render partial: 'diplomas/diploma_entry', collection: @diplomas, as: :diploma
+          = render partial: 'diplomas/diploma_entry', collection: [Diploma.new] + @diplomas, as: :diploma
