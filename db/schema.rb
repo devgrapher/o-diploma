@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_030829) do
 
   create_table "diplomas", force: :cascade do |t|
     t.string "name"
-    t.string "rank"
+    t.integer "rank"
     t.string "course"
     t.string "club"
     t.integer "cardnumber"

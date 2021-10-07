@@ -25,7 +25,8 @@ class DiplomasController < ApplicationController
   end
 
   def search_form
-    @diplomas = Diploma.all
+    @diplomas = Diploma.where.not(rank: nil).order('rank asc')
+    @diplomas += Diploma.where(rank: nil)
   end
 
   def search
