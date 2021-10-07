@@ -4,11 +4,11 @@ export default class extends Controller {
   static values = { image: String }
   connect() {
     if (!Kakao.isInitialized()) {
-      Kakao.init('54fa60f20d8980459e780d9a7e27df2c');
+      Kakao.init('6e36c4ff9ea895eb794bfe234c1d2222');
     }
   }
 
-  async post(e) {
+  post(e) {
     e.preventDefault()
 
     console.log(this.imageValue)

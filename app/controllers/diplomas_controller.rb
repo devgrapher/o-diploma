@@ -4,8 +4,8 @@ class DiplomasController < ApplicationController
   end
 
   def show
-    build_meta_tag(:id)
     @diploma = Diploma.find(params[:id])
+    build_meta_tag(@diploma)
     
     respond_to do |format|
       format.html { render "show" }
@@ -39,7 +39,7 @@ class DiplomasController < ApplicationController
 
   private
 
-  def build_meta_tag(id)
-    set_meta_tags og: { description: '경기 결과', image: diploma_path(format: :png), url: diploma_path }
+  def build_meta_tag(diploma)
+    set_meta_tags og: { image: diploma_path(diploma, format: :png), url: diploma_path(diploma) }
   end
 end
