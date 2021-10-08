@@ -1,5 +1,5 @@
-- bg = diploma_counter % 2 == 0 ? 'bg-opacity-20 bg-gray-50' : '';
-.flex.space-x-1.text-sm.md:text-base{ class: bg }
+- bg = diploma_counter % 2 == 0 ? 'bg-opacity-70' : 'bg-opacity-40';
+.flex.space-x-1.px-1.text-sm.md:text-base.bg-gray-50{ class: bg }
   .w-12= diploma_counter == 0 ? '종목' : diploma.gameclass
   .w-8= diploma_counter == 0 ? '순위' : diploma.rank
   .w-32= diploma_counter == 0 ? '이름' : diploma.name

@@ -1,23 +1,21 @@
-.pb-20.bg-main.bg-cover.opacity-90.min-h-screen{ style: 'width: 100vw; margin-left: calc(-50vw + 50%);' }
-  .max-w-xl.flex.flex-col.justify-center.mx-auto
-    .m-6.flex.justify-end
-      = link_to 'https://playoground.com/playoground', class: 'text-blue-900 hover:text-blue-600', target: '_blank' do
-        %i.fas.fa-home
-    .py-16.md:pt-24.text-2xl.text-center.text-white.font-medium
-      Play O Ground
-      .py-2
-        완주를 축하합니다.
-    .flex.flex-col.px-2
-      .pb-4.text-xl.text-white.font-bold
-        .text-white.border-b
-          완주증 확인
+.max-w-xl.flex.flex-col.justify-center.mx-auto
+  .m-6.flex.justify-end
+    = link_to 'https://playoground.com/playoground', class: 'text-gray-600 hover:text-blue-600', target: '_blank' do
+      %i.fas.fa-home.text-lg
+  .flex.items-center
+    = image_pack_tag "media/images/logo.png"
+.bg-main.min-h-screen{ style: 'width: 100vw; margin-left: calc(-50vw + 50%);' }
+  .bg-gradient-to-b.from-white
+    .flex.flex-col.px-2.max-w-xl.mx-auto.text-gray-800.pt-32
+      .text-xl.font-bold.border-gray-300.border-b
+        완주증 확인
       = form_with url: diplomas_search_path, method: :post, local: true, class: "space-y-4 flex items-center justify-center pb-20" do |f|
         = text_field_tag :name, params[:name], placeholder: '이름을 입력해주세요', type: 'search', class:"w-44 h-10 border border-solid rounded px-4"
         = f.submit '확인', class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded-sm cursor-pointer'
 
       - if @diplomas.any?
-        .bg-gradient-to-l.from-gray-400.p-2
-          .mt-4.text-white.font-bold.border-b.w-full.text-xl
+        .py-2
+          .mt-4.font-bold.border-gray-300.border-b.w-full.text-xl
             참가자 기록
-          .text-white.font-medium
+          .font-medium
             = render partial: 'diplomas/diploma_entry', collection: [Diploma.new] + @diplomas, as: :diploma
