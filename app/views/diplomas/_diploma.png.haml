@@ -1,8 +1,8 @@
 .max-w-2xl.text-right{ style: 'width: 600px; height: 600px; ' }
   .bg-diploma.bg-contain.bg-center.bg-no-repeat.flex.flex-col.items-center.w-full.p-2.pb-4.text-white.text-xl.font-medium{ style: 'background-repeat: no-repeat; background-position: center; color:rgba(0,0,0);'}
     %div{ style: 'height: 328px;' }
-    .mr-16.py-3.pl-16= @diploma.gameclass
+    .mr-16.py-3.pl-16= @diploma.gameclass || '-'
     .mr-16.py-3.pl-16= @diploma.name
     .mr-16.py-3.pl-16= @diploma.club || '-'
-    .mr-16.py-3.pl-16= @diploma.result
-    %div{ style: 'height: 34px;' }
+    .mr-16.py-3.pl-16= @diploma.result || '-'
+    %div{ style: 'height: 36px;' }
