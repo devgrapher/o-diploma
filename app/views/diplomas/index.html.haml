@@ -1,3 +1,8 @@
-/margin-left: calc(-50vw + 50%);
-- if @diplomas.any?
-  = render partial: 'diplomas/diploma_entry', collection: @diplomas, as: :diploma
+.py-16
+  - if @diplomas.any?
+    = render partial: 'diplomas/diploma_entry', collection: @diplomas, as: :diploma
+
+.mx-auto.bg-gray-100.p-2.m-4
+  = form_with url: diplomas_upload_path, multipart: true, class: 'flex justify-between' do |f|
+    = file_field :upload, :result
+    = f.submit '업로드', class: 'bg-white text-blue-700 hover:text-blue-900 hover:bg-white border p-1 cursor-pointer drop-shadow'

@@ -39,6 +39,15 @@ class DiplomasController < ApplicationController
     end
   end
 
+  def upload
+    return if params.dig(:upload, :result).blank?
+
+    csv_text = File.read(Rails.root.join(params[:upload][:result]))
+    Diploma.load_csv csv_text, true
+
+    redirect_to diplomas_path
+  end
+
   private
 
   def build_meta_tag(diploma)

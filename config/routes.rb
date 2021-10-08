@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "/diplomas/search", to: "diplomas#search_form"
   post "/diplomas/search", to: "diplomas#search"
   get "/diplomas/:id", to: "diplomas#show", as: :diploma
+  post "diplomas/upload", to: "diplomas#upload"
 
 end
