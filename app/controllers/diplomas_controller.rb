@@ -1,5 +1,5 @@
 class DiplomasController < ApplicationController
-  caches_action :show, expires_in: 1.hour, unless: -> { request.format.html? }
+  caches_action :show, expires_in: 1.hour, unless: -> { request.format.html? && params[:download] }
 
   def index
     @diplomas = Diploma.all
@@ -17,7 +17,7 @@ class DiplomasController < ApplicationController
         if params[:download]
           file_path = "#{Rails.root}/public/#{params[:id]}.png"
           file = kit.to_file(file_path)
-          send_file(file_path, :filename => "완주기록_#{params[:id]}.png", :type => "image/png",:disposition => 'attachment',:streaming=> 'true')
+          send_file(file_path, :filename => "완주증_#{@diploma.name}.png", :type => "image/png",:disposition => 'attachment',:streaming=> 'true')
         else
           send_data(kit.to_img(:png), :type => "image/png", :disposition => 'inline')
         end
