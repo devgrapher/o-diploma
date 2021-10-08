@@ -10,3 +10,9 @@
     = link_to "#", style: 'background-color: #fee500; color: #381f20;', class: 'flex rounded text-white py-1.5 p-2', data: { controller: 'kakao', action: 'kakao#post', 'kakao-image-value': diploma_url(@diploma, host: Rails.application.config.asset_host) } do
       = image_pack_tag "media/images/social-kakao.png", class: 'w-6 h-6 mr-1'
       공유하기
+
+  .flex.space-x-4.pt-8.text-lg.text-blue-900
+    = link_to 'https://playoground.com/playoground', class: 'hover:text-blue-600', target: '_blank' do
+      %i.fas.fa-home
+    = link_to root_path, class: 'hover:text-blue-600' do
+      %i.fas.fa-list
