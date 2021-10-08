@@ -1,5 +1,5 @@
 class DiplomasController < ApplicationController
-  caches_action :show, expires_in: 1.hour, unless: -> { request.format.html? && params[:download] }
+  caches_action :show, expires_in: 1.hour, unless: -> { request.format.html? || params[:download] }
 
   def index
     @diplomas = Diploma.all
