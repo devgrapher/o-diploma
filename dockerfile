@@ -1,19 +1,13 @@
 # syntax=docker/dockerfile:1
-FROM ruby:2.7.2
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y nodejs yarn
-
-WORKDIR /app
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-RUN gem install bundler:2.2.6
-COPY bin/ /app/bin/
-RUN bin/bundle install
-
-RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb -O /tmp/wkhtmltopdf.deb
-RUN apt-get -f -y install /tmp/wkhtmltopdf.deb
+FROM ruby:2.7
+RUN apt-get update && apt-get install -y \
+  curl \
+  build-essential \
+  libpq-dev &&\
+  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+  apt-get update && apt-get install -y nodejs yarn vim npm
 
 # Add a script to be executed every time the container starts.
 COPY bin/entrypoint.sh /usr/bin/
@@ -23,6 +17,7 @@ EXPOSE 80
 
 COPY yarn.lock /app/
 COPY package.json /app/
+WORKDIR /app
 RUN npm install
 
 COPY app/ /app/app/
