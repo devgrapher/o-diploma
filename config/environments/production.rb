@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = ENV['ESSET_HOST'] || 'https://diploma.orienteering.co.kr'
+  config.asset_host = ENV['ESSET_HOST'] || 'https://odiploma.e1n1t5hvlr9tk.ap-northeast-2.cs.amazonlightsail.com'
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
