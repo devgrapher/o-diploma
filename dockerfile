@@ -24,7 +24,6 @@ EXPOSE 80
 
 COPY yarn.lock /app/
 COPY package.json /app/
-WORKDIR /app
 RUN npm install
 
 COPY app/ /app/app/
