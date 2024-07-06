@@ -4,10 +4,13 @@ RUN apt-get update && apt-get install -y \
   curl \
   build-essential \
   libpq-dev &&\
-  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+  curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-get update && apt-get install -y nodejs yarn vim npm
+  apt-get update && apt-get install -y nodejs yarn vim
+
+RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb -O /tmp/wkhtmltopdf.deb
+RUN apt-get -f -y install /tmp/wkhtmltopdf.deb
 
 WORKDIR /app
 COPY Gemfile /app/Gemfile
