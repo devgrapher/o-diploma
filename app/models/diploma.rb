@@ -32,6 +32,10 @@ class Diploma < ApplicationRecord
 
       puts diploma.errors.inspect if diploma.errors.any?
     end
+  end
 
+  def club_and_name
+    text = "#{name} #{club}"
+    text.length >= 12 ? name : text
   end
 end
