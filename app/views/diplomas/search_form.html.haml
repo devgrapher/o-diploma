@@ -10,7 +10,7 @@
       .text-xl.font-bold.border-gray-300.border-b
         기록증 확인
       = form_with url: diplomas_search_path, method: :post, local: true, class: "space-y-4 flex items-center justify-center pb-20" do |f|
-        = text_field_tag :name, params[:name], placeholder: '이름을 입력해주세요', type: 'search', class:"w-44 h-10 border border-solid rounded px-4"
+        = text_field_tag :q, params[:q], placeholder: '배번 또는 이름을 입력해주세요', type: 'search', class:"w-60 h-10 border border-solid rounded px-4"
         = f.submit '확인', class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded-sm cursor-pointer'
 
       - if @diplomas.any?

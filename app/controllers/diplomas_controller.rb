@@ -31,11 +31,11 @@ class DiplomasController < ApplicationController
   end
 
   def search
-    diploma = Diploma.find_by_name params['name']
+    diploma = Diploma.where("name = ? OR number = ?", params['q'], params['q']).first
     if diploma.present?
       redirect_to diploma_path(diploma)
     else
-      redirect_to root_path, alert: '이름을 찾을 수 없습니다.'
+      redirect_to root_path, alert: '참가자를 찾을 수 없습니다.'
     end
   end
 
