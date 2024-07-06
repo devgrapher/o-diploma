@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_10_04_030829) do
 
   create_table "diplomas", force: :cascade do |t|
+    t.string "number"
     t.string "name"
     t.integer "rank"
     t.string "course"

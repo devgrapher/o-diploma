@@ -1,6 +1,7 @@
 class CreateDiplomas < ActiveRecord::Migration[6.1]
   def change
     create_table :diplomas do |t|
+      t.string :number
       t.string :name
       t.integer :rank
       t.string :course

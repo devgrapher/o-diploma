@@ -15,6 +15,7 @@ class Diploma < ApplicationRecord
     csv.each do |row|
       puts row.inspect
       diploma = Diploma.find_or_initialize_by(name: row['Name1']) do |instance|
+        instance.number = row['Number']
         instance.name = row['Name1']
         instance.rank = row['Rank']
         instance.course = row['Course']

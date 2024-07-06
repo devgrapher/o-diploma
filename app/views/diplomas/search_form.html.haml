@@ -6,9 +6,9 @@
     = image_pack_tag "media/images/logo.png"
 .bg-main.bg-no-repeat.bg-cover.min-h-screen{ style: 'width: 100vw; margin-left: calc(-50vw + 50%);' }
   .bg-gradient-to-b.from-white
-    .flex.flex-col.px-2.max-w-xl.mx-auto.text-gray-800.pt-32
+    .flex.flex-col.px-2.max-w-xl.mx-auto.text-gray-800.pt-4
       .text-xl.font-bold.border-gray-300.border-b
-        완주증 확인
+        기록증 확인
       = form_with url: diplomas_search_path, method: :post, local: true, class: "space-y-4 flex items-center justify-center pb-20" do |f|
         = text_field_tag :name, params[:name], placeholder: '이름을 입력해주세요', type: 'search', class:"w-44 h-10 border border-solid rounded px-4"
         = f.submit '확인', class: 'text-white ml-2 py-2 px-4 h-9 bg-primary-800 rounded-sm cursor-pointer'

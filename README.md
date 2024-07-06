@@ -2,4 +2,6 @@
 
 - yarn install
 - rake data:seed:diploma
-- rails server
+- bundle exec rails assets:precompile
+- bundle exec rails server
+
